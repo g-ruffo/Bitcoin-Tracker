@@ -86,6 +86,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uxl-fN-Wog" secondAttribute="bottom" id="und-tc-n5G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bitcoinLabel" destination="jMa-Ln-nda" id="kTu-Fg-7kL"/>
+                        <outlet property="currencyLabel" destination="Wo9-7T-98k" id="AT2-ab-10x"/>
+                        <outlet property="currencyPicker" destination="nue-MK-lKD" id="kcB-bd-8zE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
