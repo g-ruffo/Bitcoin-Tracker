@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7952C4C829D8EAE0000151E9 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952C4C729D8EAE0000151E9 /* CoinManager.swift */; };
 		799B82A429D73E0B006D04A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B82A329D73E0B006D04A6 /* AppDelegate.swift */; };
 		799B82A629D73E0B006D04A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B82A529D73E0B006D04A6 /* SceneDelegate.swift */; };
 		799B82A829D73E0B006D04A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B82A729D73E0B006D04A6 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7952C4C729D8EAE0000151E9 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
 		799B82A029D73E0B006D04A6 /* Bitcoin Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		799B82A329D73E0B006D04A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		799B82A529D73E0B006D04A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		7964430429D7475600FE41A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7952C4C729D8EAE0000151E9 /* CoinManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7952C4C829D8EAE0000151E9 /* CoinManager.swift in Sources */,
 				799B82A829D73E0B006D04A6 /* ViewController.swift in Sources */,
 				799B82A429D73E0B006D04A6 /* AppDelegate.swift in Sources */,
 				799B82A629D73E0B006D04A6 /* SceneDelegate.swift in Sources */,
