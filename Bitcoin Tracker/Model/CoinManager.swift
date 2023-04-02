@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CurrencyPickerViewDelegate: UIPickerViewDelegate {
+protocol CoinManagerDelegate {
     func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinModel)
     func didFailWithError(_ coinManager: CoinManager, error: Error)
 }
@@ -19,7 +19,7 @@ struct CoinManager {
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     
-    var delegate: CurrencyPickerViewDelegate?
+    var delegate: CoinManagerDelegate?
     
     init() {
         apiKey = getPlistValueWithKey(fileName: "APIKey", keyName: "coinAPIKey")

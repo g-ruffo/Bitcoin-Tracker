@@ -14,13 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
+        coinManager.delegate = self
     }
     
 
@@ -42,8 +43,29 @@ extension ViewController: UIPickerViewDataSource {
 extension ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print(coinManager.currencyArray[row])
         return coinManager.currencyArray[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedCurrency = coinManager.currencyArray[row]
+        coinManager.getCoinPrice(for: selectedCurrency)
+    }
+    
+}
+
+//MARK: - CurrencyPickerViewDelegate
+
+extension ViewController: CoinManagerDelegate {
+    func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinModel) {
+        let price = coinPrice.getRate()
+        let currency = coinPrice.assetIdQuote
+        DispatchQueue.main.async {
+            self.bitcoinLabel.text = price
+            self.currencyLabel.text = currency
+        }
+    }
+    
+    func didFailWithError(_ coinManager: CoinManager, error: Error) {
+        print("Recieved an ERROR! = \(error.localizedDescription)")
+    }
 }
