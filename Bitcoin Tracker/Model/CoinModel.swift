@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoinModel: Decodable {
+struct CoinModel {
     let assetIdQuote: String
     let rate: Double
     
