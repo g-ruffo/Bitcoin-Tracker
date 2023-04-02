@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CoinModel {
+struct CoinModel: Decodable {
+    let assetIdQuote: String
     let rate: Double
     
     func getRate() -> String{
