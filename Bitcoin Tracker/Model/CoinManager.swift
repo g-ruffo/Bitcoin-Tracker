@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CoinManagerDelegate {
-    func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinModel)
+    func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinData)
     func didFailWithError(_ coinManager: CoinManager, error: Error)
 }
 
@@ -69,14 +69,14 @@ struct CoinManager {
         }
     }
     
-    func parseJSON(_ coinData: Data) -> CoinModel? {
+    func parseJSON(_ coinData: Data) -> CoinData? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
             let decodedData = try decoder.decode(CoinData.self, from: coinData)
             let id = decodedData.assetIdQuote
             let rate = decodedData.rate
-            return CoinModel(assetIdQuote: id, rate: rate)
+            return CoinData(assetIdQuote: id, rate: rate)
         } catch {
             delegate?.didFailWithError(self, error: error)
             return nil

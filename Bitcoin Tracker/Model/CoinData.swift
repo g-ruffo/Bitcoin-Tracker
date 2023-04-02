@@ -8,10 +8,12 @@
 import Foundation
 
 struct CoinData: Decodable {
-    let time: String
-    let assetIdBase: String
     let assetIdQuote: String
     let rate: Double
+    
+    func getRate() -> String{
+        return String(format: "%.2f", rate)
+    }
 
 }
 

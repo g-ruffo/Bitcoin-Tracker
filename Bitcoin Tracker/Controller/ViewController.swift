@@ -56,7 +56,7 @@ extension ViewController: UIPickerViewDelegate {
 //MARK: - CurrencyPickerViewDelegate
 
 extension ViewController: CoinManagerDelegate {
-    func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinModel) {
+    func didUpdatePrice(_ coinManager: CoinManager, coinPrice: CoinData) {
         let price = coinPrice.getRate()
         let currency = coinPrice.assetIdQuote
         DispatchQueue.main.async {
